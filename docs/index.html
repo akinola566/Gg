@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UTME Result</title>
+  <style>
+    .certificate {
+      border: 2px solid green;
+      padding: 30px;
+      width: 80%;
+      margin: auto;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8fff8;
+    }
+    .header {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: darkgreen;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .info div {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="certificate" id="result">
+    <div class="header">JOINT ADMISSIONS AND MATRICULATION BOARD (JAMB)</div>
+    <div class="info">
+      <div><strong>Name:</strong> John Doe</div>
+      <div><strong>Registration Number:</strong> 12345678AB</div>
+      <div><strong>Score:</strong> 276</div>
+      <div><strong>Year:</strong> 2024</div>
+      <div><strong>Institution:</strong> University of Lagos</div>
+    </div>
+  </div>
+
+  <button onclick="window.print()">Print Certificate</button>
+
+</body>
+</html>
