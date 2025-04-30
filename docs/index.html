@@ -1,53 +1,160 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>UTME Result</title>
+  <meta charset="UTF-8">
+  <title>UTME Result Certificate</title>
   <style>
-    .certificate {
-      border: 2px solid green;
-      padding: 30px;
-      width: 80%;
-      margin: auto;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f8fff8;
+    body {
+      background: #e6f2e6;
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 20px;
     }
+
+    .certificate {
+      background: white;
+      border: 5px double #006400;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      position: relative;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
     .header {
       text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      color: darkgreen;
+      margin-bottom: 20px;
     }
+
+    .header img {
+      height: 80px;
+    }
+
+    .header h2 {
+      margin: 10px 0 5px;
+      color: #006400;
+    }
+
+    .header h4 {
+      margin: 0;
+      color: #333;
+    }
+
     .info {
       margin-top: 20px;
       font-size: 18px;
     }
+
     .info div {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
-    button {
+
+    .score-table {
       margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .score-table th, .score-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .score-eng { color: red; font-weight: bold; }
+    .score-phy { color: blue; font-weight: bold; }
+    .score-che { color: green; font-weight: bold; }
+    .score-bio { color: goldenrod; font-weight: bold; }
+
+    .aggregate {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .footer {
+      font-style: italic;
+      text-align: center;
+      margin-top: 30px;
+      color: #555;
+    }
+
+    .qr {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      height: 80px;
+    }
+
+    .print-btn {
       display: block;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 10px 20px;
+      margin: 30px auto;
+      padding: 12px 24px;
       font-size: 16px;
+      background: #006400;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    @media print {
+      .print-btn {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="certificate" id="result">
-    <div class="header">JOINT ADMISSIONS AND MATRICULATION BOARD (JAMB)</div>
+  <div class="certificate">
+    <div class="header">
+      <img src="https://slipsprinting.jamb.gov.ng/assets/admin/img/logo_big.png" alt="JAMB Logo">
+      <h2>Joint Admissions and Matriculation Board (JAMB)</h2>
+      <h4>UTME Result Notification - 2025</h4>
+    </div>
+
     <div class="info">
-      <div><strong>Name:</strong> John Doe</div>
+      <div><strong>Candidate Name:</strong> Akinola Abosede</div>
       <div><strong>Registration Number:</strong> 12345678AB</div>
-      <div><strong>Score:</strong> 276</div>
-      <div><strong>Year:</strong> 2024</div>
       <div><strong>Institution:</strong> University of Lagos</div>
     </div>
+
+    <table class="score-table">
+      <tr>
+        <th>Subject</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>English</td>
+        <td class="score-eng">100</td>
+      </tr>
+      <tr>
+        <td>Physics</td>
+        <td class="score-phy">60</td>
+      </tr>
+      <tr>
+        <td>Chemistry</td>
+        <td class="score-che">70</td>
+      </tr>
+      <tr>
+        <td>Biology</td>
+        <td class="score-bio">50</td>
+      </tr>
+    </table>
+
+    <div class="aggregate">Aggregate Score: <span style="color:gold;">280</span></div>
+
+    <div class="footer">
+      This is to certify that the candidate listed above sat for the 2025 UTME and obtained the stated scores.
+    </div>
+
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://jamb.gov.ng/verify" alt="QR Code">
   </div>
 
-  <button onclick="window.print()">Print Certificate</button>
+  <button class="print-btn" onclick="window.print()">Print Certificate</button>
 
 </body>
 </html>
